@@ -6,7 +6,7 @@ import Table from './Table';
 import { SnackbarProvider, useSnackbar } from "notistack";
 
 function App() {
-  const API = 'https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/memberds.json';
+  const API = 'https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json';
   const [apiData, setApiData] = useState([]);
   const { enqueueSnackbar } = useSnackbar();
 
