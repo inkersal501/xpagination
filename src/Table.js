@@ -44,9 +44,9 @@ function Table({data}) {
             </tbody>
         </table>
         <div className='pagination'>
-            <Button classname={"navBtn btn-primary"} disabled={currentPage === 1} text={"Previous"} click={()=>handlePrev()} />                             
+            <Button classname={"navBtn btn-primary"} text={"Previous"} click={()=>handlePrev()} />                             
             <Button classname={"numBtn btn-primary"} text={currentPage} />          
-            <Button classname={"navBtn btn-primary"} disabled={currentPage === totalPages} text={"Next"} click={()=>handleNext()} />
+            <Button classname={"navBtn btn-primary"} text={"Next"} click={()=>handleNext()} />
         </div>
     </div>
   )
