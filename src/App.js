@@ -6,14 +6,14 @@ import Table from './Table';
 import { SnackbarProvider, useSnackbar } from "notistack";
 
 function App() {
-  const API = 'https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json';
+  const API = 'https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/memberds.json';
   const [apiData, setApiData] = useState([]);
   const { enqueueSnackbar } = useSnackbar();
 
   const getData = async ()=>{
     try {
       const data = await axios.get(API);
-      return data.data;
+      setApiData(data.data);
     } catch (error) {
       enqueueSnackbar(`failed to fetch data`,'error'); 
     }   
@@ -21,8 +21,7 @@ function App() {
 
   useEffect(()=>{
     async function fetchData() { 
-      const response = await getData();
-      setApiData(response);
+      await getData();      
     } 
     fetchData();
     console.log(apiData)
